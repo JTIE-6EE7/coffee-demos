@@ -13,11 +13,7 @@ def run_command(task):
     # command to be run
     cmd = "show ip interface brief"
     # send command to device
-    output = task.run(
-        task=netmiko_send_command, 
-        command_string=cmd,
-        use_textfsm=True
-    )
+    output = task.run(task=netmiko_send_command, command_string=cmd, use_textfsm=True)
     # assign output to host variable
     task.host["ip_addresses"] = output.result
 
@@ -31,11 +27,13 @@ def write_addresses(task):
         csv_row.append(intf["ipaddr"])
     # print CSV row for debugging
     print(csv_row)
-    
+
     # open or create CSV file
-    with open('ip_addresses.csv', mode='a') as ipaddr_file:
+    with open("ip_addresses.csv", mode="a") as ipaddr_file:
         # initialize CSV writer
-        ipaddr_writer = csv.writer(ipaddr_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        ipaddr_writer = csv.writer(
+            ipaddr_file, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL
+        )
         # write row of data to CSV file
         ipaddr_writer.writerow(csv_row)
 
@@ -47,7 +45,7 @@ def main():
     nr.run(task=run_command)
     # print results for each host
     nr.run(task=write_addresses)
-    
+
 
 if __name__ == "__main__":
     main()

@@ -13,11 +13,7 @@ def run_command(task):
     # command to be run
     cmd = "show ip interface brief"
     # send command to device
-    output = task.run(
-        task=netmiko_send_command, 
-        command_string=cmd,
-        use_textfsm=True
-    )
+    output = task.run(task=netmiko_send_command, command_string=cmd, use_textfsm=True)
     # assign output to host variable
     task.host["ip_addresses"] = output.result
 
@@ -39,7 +35,7 @@ def main():
     nr.run(task=run_command)
     # print results for each host
     nr.run(task=print_addresses)
-    
+
 
 if __name__ == "__main__":
     main()

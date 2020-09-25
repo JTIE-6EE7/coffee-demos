@@ -12,12 +12,10 @@ def run_command(task):
     # command to be run
     cmd = "show ip interface brief"
     # send command to device
-    output = task.run(
-        task=netmiko_send_command, 
-        command_string=cmd
-    )
+    output = task.run(task=netmiko_send_command, command_string=cmd)
     # assign output to host variable
     task.host["ip_addresses"] = output.result
+
 
 def print_addresses(task):
     # print inventory hostname
@@ -25,6 +23,7 @@ def print_addresses(task):
     # print previously assigned output
     print(task.host["ip_addresses"])
     print()
+
 
 def main():
     # initialize The Norn
