@@ -6,7 +6,7 @@ This script is used to run a command on network devices with Nornir
 
 from nornir import InitNornir
 from nornir.plugins.tasks.networking import netmiko_send_command
-from pprint import pprint
+from openpyxl import Workbook
 
 
 def run_command(task):
@@ -37,6 +37,19 @@ def main():
     nr = InitNornir("config.yaml")
     # run The Norn to run command
     nr.run(task=run_command)
+
+    filename = "hello_world.xlsx"
+
+    workbook = Workbook()
+
+    sheet = workbook.active
+    
+    sheet["A1"] = "hello"
+
+    sheet["B1"] = "world!"
+
+    workbook.save(filename=filename)
+
     # print results for each host
     nr.run(task=print_addresses)
     
