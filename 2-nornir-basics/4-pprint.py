@@ -21,12 +21,14 @@ def run_command(task):
     # assign output to host variable
     task.host["ip_addresses"] = output.result
 
+
 def print_addresses(task):
     # print inventory hostname
     print(task.host)
     # print previously assigned output
     pprint(task.host["ip_addresses"])
     print()
+
 
 def main():
     # initialize The Norn

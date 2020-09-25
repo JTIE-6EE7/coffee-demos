@@ -21,6 +21,7 @@ def run_command(task):
     # assign output to host variable
     task.host["ip_addresses"] = output.result
 
+
 def print_addresses(task):
     # print inventory hostname
     print(task.host)
@@ -29,6 +30,7 @@ def print_addresses(task):
         print(intf["intf"])
         print(intf["ipaddr"])
     print()
+
 
 def main():
     # initialize The Norn
