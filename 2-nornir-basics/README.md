@@ -1,6 +1,4 @@
-# Coffee and Network Automation (session 2)
-
-# Nornir Basics
+# Coffee and Network Automation (session 2): Nornir Basics
 
 Simple examples demonstrating Nornir basics
 
