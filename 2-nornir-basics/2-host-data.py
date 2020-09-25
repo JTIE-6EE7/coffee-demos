@@ -29,7 +29,7 @@ def print_addresses(task):
 
 def main():
     # initialize The Norn
-    nr = InitNornir()
+    nr = InitNornir("config.yaml")
     # run The Norn to run command
     nr.run(task=run_command)
     # print results for each host
