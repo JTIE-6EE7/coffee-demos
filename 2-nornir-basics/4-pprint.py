@@ -6,6 +6,7 @@ This script is used to run a command on network devices with Nornir
 
 from nornir import InitNornir
 from nornir.plugins.tasks.networking import netmiko_send_command
+from pprint import pprint
 
 
 def run_command(task):
@@ -24,7 +25,7 @@ def print_addresses(task):
     # print inventory hostname
     print(task.host)
     # print previously assigned output
-    print(task.host["ip_addresses"])
+    pprint(task.host["ip_addresses"])
     print()
 
 def main():

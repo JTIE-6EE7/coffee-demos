@@ -6,7 +6,6 @@ This script is used to run a command on network devices with Nornir
 
 from nornir import InitNornir
 from nornir.plugins.tasks.networking import netmiko_send_command
-from nornir.plugins.functions.text import print_result
 
 
 def run_command(task):
