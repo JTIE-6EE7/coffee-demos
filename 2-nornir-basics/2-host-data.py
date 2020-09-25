@@ -33,7 +33,7 @@ def main():
     nr.run(task=run_command)
     # print results for each host
     nr.run(task=print_addresses)
-   
+
 
 if __name__ == "__main__":
     main()

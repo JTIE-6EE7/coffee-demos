@@ -26,7 +26,7 @@ def main():
     nr = InitNornir("config.yaml")
     # run The Norn to run command
     nr.run(task=run_command)
-   
+
 
 if __name__ == "__main__":
     main()
