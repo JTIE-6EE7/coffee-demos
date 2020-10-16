@@ -20,6 +20,8 @@ def run_command(task):
 def print_addresses(task):
     # print inventory hostname
     print(task.host)
+    # print variable from inventory
+    print(task.host['whoami'])
     # print previously assigned output
     print(task.host["ip_addresses"])
     print()
