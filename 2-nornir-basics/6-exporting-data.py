@@ -32,7 +32,7 @@ def write_addresses(task):
     with open("ip_addresses.csv", mode="a") as ipaddr_file:
         # initialize CSV writer
         ipaddr_writer = csv.writer(
-            ipaddr_file, delimiter=",", quotechar='"', quoting=csv.QUOTE_MINIMAL
+            ipaddr_file, delimiter=","
         )
         # write row of data to CSV file
         ipaddr_writer.writerow(csv_row)
