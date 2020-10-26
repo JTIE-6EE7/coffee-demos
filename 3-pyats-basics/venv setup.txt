@@ -4,4 +4,10 @@ source pyATS_venv/bin/activate
 
 python --version
 
+pip list
+
 pip install 'pyats[full]'   
+
+pip list
+
+deactivate
