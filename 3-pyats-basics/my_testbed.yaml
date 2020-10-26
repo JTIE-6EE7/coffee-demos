@@ -1,0 +1,42 @@
+devices:
+ CSR-1:
+     type: 'router'
+     os: 'iosxe'
+     platform: csr1kv
+     alias: 'router-1'
+     credentials:
+         default:
+             username: admin
+             password: cisco
+     connections:
+         cli:
+             protocol: ssh
+             ip: "172.20.58.31"
+
+ CSR-2:
+     type: 'router'
+     os: 'iosxe'
+     platform: csr1kv
+     alias: 'router-2'
+     credentials:
+         default:
+             username: admin
+             password: cisco
+     connections:
+         cli:
+             protocol: ssh
+             ip: "172.20.58.32"
+
+ CSR-3:
+     type: 'router'
+     os: 'iosxe'
+     platform: csr1kv
+     alias: 'router-3'
+     credentials:
+         default:
+             username: admin
+             password: cisco
+     connections:
+         cli:
+             protocol: ssh
+             ip: "172.20.58.33"
