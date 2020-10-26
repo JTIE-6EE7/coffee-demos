@@ -1,0 +1,7 @@
+python3 -m venv pyATS_venv
+
+source pyATS_venv/bin/activate
+
+python --version
+
+pip install 'pyats[full]'   
