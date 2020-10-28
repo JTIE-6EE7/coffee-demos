@@ -4,6 +4,8 @@ source pyATS_venv/bin/activate
 
 python --version
 
+(Python 3.7.4 on Bedroc)
+
 pip list
 
 pip install 'pyats[full]'   
