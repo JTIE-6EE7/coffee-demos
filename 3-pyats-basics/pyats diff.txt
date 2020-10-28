@@ -1,0 +1,5 @@
+genie learn all --testbed-file my_testbed.yaml --output pre_change
+
+genie learn all --testbed-file my_testbed.yaml --output post_change
+
+ genie diff pre_change post_change
