@@ -6,6 +6,8 @@ python --version
 
 (Python 3.7.4 on Bedroc)
 
+(Python 3.7.3 on personal)
+
 pip list
 
 pip install 'pyats[full]'   
