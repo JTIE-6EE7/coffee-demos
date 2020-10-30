@@ -1,6 +1,6 @@
-python3 -m venv pyATS_venv
+python3 -m venv venv_pyATS
 
-source pyATS_venv/bin/activate
+source venv_pyATS/bin/activate
 
 python --version
 
