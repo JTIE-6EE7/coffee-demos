@@ -15,13 +15,12 @@ from nornir.plugins.tasks.networking import netmiko_send_config
 
 def change_stuffs(task):
 
-    if task.host.name == 'CSR-2':
-        
-        cmd = "int loopback 0\nshutdown"
+    cmd = "int loopback0"
 
-    if task.host.name == 'CSR-3':
-        
-        cmd = "int GigabitEthernet1\nshutdown"
+    if task.host.name == 'CSR-2':    
+        cmd = "int loopback0\nshutdown\n"
+    if task.host.name == 'CSR-3':       
+        cmd = "int GigabitEthernet1\nshutdown\n"
 
     output = task.run(task=netmiko_send_config, config_commands=cmd)
 
@@ -32,9 +31,11 @@ def main():
     # kickoff The Norn
     nr = InitNornir()
     # run The Norn
+    print("Changing stuff.")
     nr.run(task=change_stuffs)
-    #print("~" * 80)
-
-
+    print("~" * 80)
+    print(f"Failed hosts: {nr.data.failed_hosts}")
+    print("~" * 80)
+    
 if __name__ == "__main__":
     main()
