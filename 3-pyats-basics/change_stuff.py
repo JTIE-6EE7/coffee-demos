@@ -22,7 +22,7 @@ def change_stuffs(task):
     if task.host.name == 'CSR-3':       
         cmd = "int GigabitEthernet1\nshutdown\n"
 
-    output = task.run(task=netmiko_send_config, config_commands=cmd)
+    task.run(task=netmiko_send_config, config_commands=cmd)
 
 
 

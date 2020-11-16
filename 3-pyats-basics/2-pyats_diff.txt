@@ -1,5 +1,9 @@
 genie learn all --testbed-file my_testbed.yaml --output pre_change
 
+python3 change_stuff.py
+
 genie learn all --testbed-file my_testbed.yaml --output post_change
 
 genie diff pre_change post_change --output diff_change
+
+more diff_change/*
