@@ -1,7 +1,7 @@
 2-nornir-basics/ip_addresses.csv
 1-netbox-nornir/configs/*
-3-pyats-basics/pyATS_venv/*
 3-pyats-basics/post_change/*.txt
 3-pyats-basics/pre_change/*.txt
 3-pyats-basics/diff_changes/*.txt
 3-pyats-basics/diff_change/*.txt
+3-pyats-basics/venv_pyATS/*
