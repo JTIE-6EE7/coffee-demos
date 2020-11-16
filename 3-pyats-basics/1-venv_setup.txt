@@ -8,6 +8,8 @@ pip list
 
 pip install 'pyats[full]'   
 
+pip install nornir==2.5
+
 pip list
 
 deactivate
