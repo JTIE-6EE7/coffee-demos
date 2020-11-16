@@ -25,16 +25,15 @@ def change_stuffs(task):
     task.run(task=netmiko_send_config, config_commands=cmd)
 
 
-
-
 def main():
     # kickoff The Norn
     nr = InitNornir()
     # run The Norn
-    print("Changing stuff.")
-    nr.run(task=change_stuffs)
     print("~" * 80)
-    print(f"Failed hosts: {nr.data.failed_hosts}")
+    print("Making network changes.".center(80," "))
+    print("~" * 80)
+    nr.run(task=change_stuffs)
+    print("Network changes complete.".center(80," "))
     print("~" * 80)
     
 if __name__ == "__main__":
