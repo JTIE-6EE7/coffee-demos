@@ -1,5 +1,7 @@
 genie learn all --testbed-file my_testbed.yaml --output pre_change
 
+pyats create testbed interactive --output new-testbed.yml --encode-password
+
 python3 change_stuff.py
 
 genie learn all --testbed-file my_testbed.yaml --output post_change
