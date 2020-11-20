@@ -5,3 +5,4 @@
 3-pyats-basics/diff_changes/*.txt
 3-pyats-basics/diff_change/*.txt
 3-pyats-basics/venv_pyATS/*
+3-pyats-basics/__pycache__/*
