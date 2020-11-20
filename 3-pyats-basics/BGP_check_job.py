@@ -8,7 +8,7 @@ from ats.easypy import run
 def main():
     # Find the location of the script in relation to the job file
     pwd = os.path.dirname(__file__)
-    bgp_tests = os.path.join(pwd, 'bgp_test.py')
+    bgp_tests = os.path.join(pwd, 'BGP_Neighbor_check.py')
     # Execute the testscript
     # run(testscript=testscript)
     run(testscript=bgp_tests)
