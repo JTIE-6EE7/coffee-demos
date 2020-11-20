@@ -12,7 +12,7 @@ from socket import *
 #
 
 s = socket(AF_PACKET, SOCK_RAW)
-s.bind(("eth1", 0))
+s.bind(("en0", 0))
 src_addr = "\x01\x02\x03\x04\x05\x06"
 dst_addr = "\x00\x0c\x29\x78\x1b\xbd"
 payload = ("["*30)+"PAYLOAD"+("]"*30)

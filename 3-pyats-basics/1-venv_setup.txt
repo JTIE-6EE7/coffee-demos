@@ -10,6 +10,12 @@ pip install 'pyats[full]'
 
 pip install nornir==2.5
 
+pip install tabulate
+
 pip list
+
+pip freeze > requirements.txt
+
+pip install -r requirements.txt 
 
 deactivate
