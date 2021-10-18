@@ -6,26 +6,28 @@ How to render device configs using Jinja2 templates
 
 https://ttl255.com/jinja2-tutorial-part-1-introduction-and-variable-substitution/
 
-https://realpython.com/primer-on-jinja-templating/
-
 https://codingpackets.com/blog/jinja2-for-network-engineers/
 
+https://realpython.com/primer-on-jinja-templating/
 
-## Template syntax
+
+## Template Syntax and Rendering
 
 {{ stuff }}
 
-## Rendering
-
-more stuff
 
 ## For-loops
 
-loopy stuff
+{% for n in numbers %}
+{{ n }} 
+{% endfor %}"
+
 
 ## Conditionals
 
+
 Conditional stuff
+
 
 ## Template testing sites
 

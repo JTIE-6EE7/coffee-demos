@@ -4,5 +4,5 @@ t = Template("Hello {{ something }}!")
 
 my_output = t.render(something="World")
 
-print(my_output)
+print(f"\n{my_output}\n")
 

@@ -1,7 +1,7 @@
 from jinja2 import Template
 
-t = Template("My favorite numbers: {% for n in range(1,10) %}{{n}} " "{% endfor %}")
+t = Template("My favorite numbers: {% for n in numbers %}{{n}} {% endfor %}")
 
-my_output = t.render()
+my_output = t.render(numbers=range(1,11))
 
-print(my_output)
+print(f"\n{my_output}\n")
