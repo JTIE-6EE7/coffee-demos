@@ -2,6 +2,15 @@
 
 How to render device configs using Jinja2 templates
 
+## Intro
+
+https://ttl255.com/jinja2-tutorial-part-1-introduction-and-variable-substitution/
+
+https://realpython.com/primer-on-jinja-templating/
+
+https://codingpackets.com/blog/jinja2-for-network-engineers/
+
+
 ## Template syntax
 
 {{ stuff }}
@@ -18,12 +27,9 @@ loopy stuff
 
 Conditional stuff
 
-## Testing sites
-
-Site stuff
+## Template testing sites
 
 https://ttl255.com/j2live-online-jinja2-parser/
-
 
 http://jinja.quantprogramming.com/
 
