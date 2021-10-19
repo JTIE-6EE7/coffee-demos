@@ -11,14 +11,19 @@ https://codingpackets.com/blog/jinja2-for-network-engineers/
 https://realpython.com/primer-on-jinja-templating/
 
 
-## Template Syntax and Rendering
+## 1. Template Syntax and Rendering
 
 {{ stuff }}
 
 
-## Router Base Config Template
+## 2. Router Base Config Template
 
 Router config using data dictionary
+
+
+## 2. Router Base Config from file
+
+Router config using j2 template file and YAML data file
 
 
 ## For-loops

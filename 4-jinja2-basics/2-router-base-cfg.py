@@ -3,7 +3,7 @@ from jinja2 import Template
 template = """hostname {{ hostname }}
 
 no ip domain lookup
-ip domain name local.lab
+ip domain name {{ domain_name }}
 ip ssh version 2
 ip name-server {{ name_server_pri }}
 ip name-server {{ name_server_sec }}
@@ -16,6 +16,7 @@ logging host {{ splunk_sec }}"""
 
 data = {
     "hostname": "core-sw-nsh-01",
+    "domain_name": "local.lab",
     "name_server_pri": "192.0.2.11",
     "name_server_sec": "192.0.2.12",
     "ntp_server_pri": "0.pool.ntp.org",
