@@ -20,4 +20,8 @@ data = {
 
 j2_template = Template(template)
 
-print(j2_template.render(data))
+cfg = j2_template.render(data)
+
+print()
+print(cfg)
+print()
