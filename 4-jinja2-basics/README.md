@@ -16,6 +16,11 @@ https://realpython.com/primer-on-jinja-templating/
 {{ stuff }}
 
 
+## Router Base Config Template
+
+Router config using data dictionary
+
+
 ## For-loops
 
 {% for n in numbers %}

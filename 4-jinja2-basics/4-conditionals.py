@@ -1,7 +1,7 @@
 from jinja2 import Template
 
 
-t = Template("""hostname {{ hostname }}
+j2_template = Template("""hostname {{ hostname }}
 {% if ios_ver >= 12.2 -%}
 Detected IOS ver {{ ios_ver }}, using new command syntax.
 {% else -%}
@@ -13,7 +13,7 @@ data = {
     "hostname": "ios-router"
 }
 
-my_output = t.render(data)
+my_output = j2_template.render(data)
 
 print()
 print(my_output)
