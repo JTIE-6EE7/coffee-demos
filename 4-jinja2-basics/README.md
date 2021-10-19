@@ -6,6 +6,8 @@ How to render device configs using Jinja2 templates
 
 https://ttl255.com/jinja2-tutorial-part-1-introduction-and-variable-substitution/
 
+https://packetlife.net/blog/2019/oct/8/templating-device-configurations/
+
 https://codingpackets.com/blog/jinja2-for-network-engineers/
 
 https://realpython.com/primer-on-jinja-templating/
@@ -15,10 +17,12 @@ https://realpython.com/primer-on-jinja-templating/
 
 {{ stuff }}
 
+j2_template.render(stuff="Things")
+
 
 ## 2. Router Base Config Template
 
-Router config using data dictionary
+Router config using template and data dictionary within Python script
 
 
 ## 2. Router Base Config from file
