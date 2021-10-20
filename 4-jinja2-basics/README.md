@@ -39,7 +39,9 @@ access-list 10 permit {{ acl }}
 
 ## 5. Conditionals
 
-Conditional stuff
+{% if device_role == "core" %}
+Do things here
+{% endif %}
 
 
 ## Template testing sites
