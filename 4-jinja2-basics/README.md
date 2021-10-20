@@ -22,22 +22,22 @@ j2_template.render(stuff="Things")
 
 ## 2. Switch Base Config Template
 
-Switch config using template and data dictionary within Python script
+Switch config using template and data dictionary within the Python script
 
 
-## 2. Switch Base Config from file
+## 3. Switch Base Config from file
 
-Switch config using j2 template file and YAML data file
-
-
-## For-loops
-
-{% for n in numbers %}
-{{ n }} 
-{% endfor %}"
+Switch config using external j2 template file and YAML data file
 
 
-## Conditionals
+## 4. For-loops
+
+{% for acl in mgmt_acl %}
+access-list 10 permit {{ acl }}
+{%- endfor %}
+
+
+## 5. Conditionals
 
 
 Conditional stuff

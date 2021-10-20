@@ -1,10 +1,10 @@
-hostname {{ hostname }}
+hostname {{ site_code }}-{{ device_role }}-{{ device_name}}
 
 no ip domain lookup
 ip domain name {{ domain_name }}
-ip ssh version 2
 ip name-server {{ name_server_pri }}
 ip name-server {{ name_server_sec }}
+ip ssh version 2
 
 ntp server {{ ntp_server_pri }} prefer
 ntp server {{ ntp_server_sec }}

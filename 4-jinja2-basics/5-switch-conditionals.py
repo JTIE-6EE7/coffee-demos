@@ -1,20 +1,17 @@
+import yaml
 from jinja2 import Template
 
+# Load Jinja2 template from file
+with open(5_switch-template.j2") as f:
+    j2_template = Template(f.read())
 
-j2_template = Template("""hostname {{ hostname }}
-{% if ios_ver >= 12.2 -%}
-Detected IOS ver {{ ios_ver }}, using new command syntax.
-{% else -%}
-Detected IOS ver {{ ios_ver }}, using old command syntax.
-{% endif %}""")
+# Load config data from YAML file
+with open(5_switch-data.yaml") as f:
+    data = yaml.safe_load(f)
 
-data = {
-    "ios_ver": 12.2,
-    "hostname": "ios-router"
-}
-
-my_output = j2_template.render(data)
+# Render configuration
+cfg = j2_template.render(data)
 
 print()
-print(my_output)
+print(cfg)
 print()

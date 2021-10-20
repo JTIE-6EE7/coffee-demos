@@ -1,4 +1,6 @@
-hostname: core-sw-nsh-01
+site_code: nsh
+device_role: core
+device_name: sw-01
 domain_name: local.lab
 name_server_pri: 192.0.2.11
 name_server_sec: 192.0.2.12
