@@ -1,3 +1,4 @@
+
 hostname {{ site_code }}-{{ device_role }}-{{ device_name}}
 
 no ip domain lookup
@@ -26,3 +27,4 @@ line vty 0 15
 vlan {{ vlan.id }}
  name {{ site_code}}_{{ vlan.name }}
 {%- endfor %}
+

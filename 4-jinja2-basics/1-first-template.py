@@ -6,6 +6,5 @@ j2_template = Template("Hello {{ something }}!!")
 # Render template using data
 my_output = j2_template.render(something="World")
 
-print()
+# Print output
 print(my_output)
-print()

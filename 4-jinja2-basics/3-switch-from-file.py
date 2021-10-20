@@ -12,6 +12,4 @@ with open("3_switch-data.yaml") as f:
 # Render configuration
 cfg = j2_template.render(data)
 
-print()
 print(cfg)
-print()
