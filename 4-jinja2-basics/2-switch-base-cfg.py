@@ -7,13 +7,17 @@ no ip domain lookup
 ip domain name {{ domain_name }}
 ip name-server {{ name_server_pri }}
 ip name-server {{ name_server_sec }}
+
+ip ssh time-out 60
 ip ssh version 2
 
 ntp server {{ ntp_server_pri }} prefer
 ntp server {{ ntp_server_sec }}
 
 logging host {{ splunk_pri }}
-logging host {{ splunk_sec }}"""
+logging host {{ splunk_sec }}
+
+"""
 
 data = {
     "site_code": "nsh",
@@ -33,4 +37,3 @@ j2_template = Template(template)
 cfg = j2_template.render(data)
 
 print(cfg)
-print()

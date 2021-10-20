@@ -39,7 +39,6 @@ access-list 10 permit {{ acl }}
 
 ## 5. Conditionals
 
-
 Conditional stuff
 
 

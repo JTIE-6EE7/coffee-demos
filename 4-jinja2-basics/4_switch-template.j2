@@ -4,6 +4,8 @@ no ip domain lookup
 ip domain name {{ domain_name }}
 ip name-server {{ name_server_pri }}
 ip name-server {{ name_server_sec }}
+
+ip ssh time-out 60
 ip ssh version 2
 
 ntp server {{ ntp_server_pri }} prefer
@@ -14,3 +16,7 @@ logging host {{ splunk_sec }}
 {% for acl in mgmt_acl %}
 access-list 10 permit {{ acl }}
 {%- endfor %}
+
+line vty 0 15
+ access-class 10 in
+ exec-timeout 15
