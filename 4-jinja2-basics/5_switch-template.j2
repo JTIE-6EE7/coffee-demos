@@ -53,7 +53,6 @@ interface TenGigabitEthernet1/0/2
  ip dhcp snooping trust
  switchport mode trunk
  switchport trunk allowed vlan {% for vlan in vlans %}{{ vlan.id }}
-
  {%- if not loop.last -%},
  {%-endif %}
 {%- endfor %}
