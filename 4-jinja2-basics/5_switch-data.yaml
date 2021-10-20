@@ -1,6 +1,6 @@
 site_code: nsh
 device_role: core
-device_name: sw=01
+device_name: sw-01
 domain_name: local.lab
 name_server_pri: 192.0.2.11
 name_server_sec: 192.0.2.12
@@ -12,10 +12,13 @@ mgmt_acl:
   - 10.100.101.0 0.0.0.255
   - 10.100.102.0 0.0.0.255
   - 10.100.103.0 0.0.0.255
-interfaces:
-  - id: GigabitEthernet1
-    ip_addr: 192.0.2.129 255.255.255.252
-    desc: WAN circuit ID 5873654
-  - id: GigabitEthernet2
-    ip_addr: 10.25.10.1 255.255.255.0
-    desc: LAN interface 
+vlans:
+  - id: 101
+    name: data_vlan
+    ip_addr: 10.25.101.1 255.255.255.0
+  - id: 102
+    name: voice_vlan
+    ip_addr: 10.25.102.1 255.255.255.0
+  - id: 103
+    name: wireless_vlan
+    ip_addr: 10.25.103.1 255.255.255.0

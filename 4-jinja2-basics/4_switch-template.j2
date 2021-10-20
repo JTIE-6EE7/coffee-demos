@@ -13,6 +13,7 @@ ntp server {{ ntp_server_sec }}
 
 logging host {{ splunk_pri }}
 logging host {{ splunk_sec }}
+!-----------------------------------------
 {% for acl in mgmt_acl %}
 access-list 10 permit {{ acl }}
 {%- endfor %}
@@ -20,3 +21,8 @@ access-list 10 permit {{ acl }}
 line vty 0 15
  access-class 10 in
  exec-timeout 15
+
+{% for vlan in vlans %}
+vlan {{ vlan.id }}
+ name {{ site_code}}_{{ vlan.name }}
+{%- endfor %}

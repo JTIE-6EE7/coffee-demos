@@ -1,0 +1,60 @@
+hostname {{ site_code }}-{{ device_role }}-{{ device_name}}
+
+no ip domain lookup
+ip domain name {{ domain_name }}
+ip name-server {{ name_server_pri }}
+ip name-server {{ name_server_sec }}
+
+ip ssh time-out 60
+ip ssh version 2
+
+ntp server {{ ntp_server_pri }} prefer
+ntp server {{ ntp_server_sec }}
+
+logging host {{ splunk_pri }}
+logging host {{ splunk_sec }}
+!-----------------------------------------
+{% for acl in mgmt_acl %}
+access-list 10 permit {{ acl }}
+{%- endfor %}
+
+line vty 0 15
+ access-class 10 in
+ exec-timeout 15
+
+{% for vlan in vlans %}
+vlan {{ vlan.id }}
+ name {{ site_code}}_{{ vlan.name }}
+{%- endfor %}
+!-----------------------------------------
+
+{% if device_role == "core" %}
+{%- for vlan in vlans %}
+interface vlan{{ vlan.id }}
+ description {{ site_code}}_{{ vlan.name }}
+ no switchport {{ vlan.ip_addr }}
+ ip address
+ no shutdown
+{% endfor %}
+{% endif %}
+
+{% if device_role == "acc" %}
+interface TenGigabitEthernet1/0/1
+ description {{ site_code }}-core-sw-01 uplink
+ ip dhcp snooping trust
+ switchport mode trunk
+ switchport trunk allowed vlan {% for vlan in vlans %}{{ vlan.id }}
+ {%- if not loop.last -%},
+ {%-endif %}
+{%- endfor %}
+
+interface TenGigabitEthernet1/0/2
+ description {{ site_code }}-core-sw-02 uplink
+ ip dhcp snooping trust
+ switchport mode trunk
+ switchport trunk allowed vlan {% for vlan in vlans %}{{ vlan.id }}
+
+ {%- if not loop.last -%},
+ {%-endif %}
+{%- endfor %}
+{% endif %}

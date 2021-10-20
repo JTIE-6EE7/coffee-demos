@@ -1,6 +1,6 @@
 site_code: nsh
 device_role: core
-device_name: sw=01
+device_name: sw-01
 domain_name: local.lab
 name_server_pri: 192.0.2.11
 name_server_sec: 192.0.2.12
@@ -12,3 +12,12 @@ mgmt_acl:
   - 10.100.101.0 0.0.0.255
   - 10.100.102.0 0.0.0.255
   - 10.100.103.0 0.0.0.255
+vlans:
+  - id: 101
+    name: data_vlan
+  - id: 102
+    name: voice_vlan
+  - id: 103
+    name: wireless_vlan
+
+
