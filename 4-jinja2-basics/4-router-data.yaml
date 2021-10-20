@@ -1,0 +1,23 @@
+hostname: core-sw-nsh-01
+domain_name: local.lab
+name_server_pri: 192.0.2.11
+name_server_sec: 192.0.2.12
+ntp_server_pri: 0.pool.ntp.org
+ntp_server_sec: 1.pool.ntp.org
+splunk_pri: 192.0.2.21
+splunk_sec: 192.0.2.22
+snmp_acl:
+  - 10.10.10.10
+  - 10.10.10.11
+  - 10.10.10.12
+mgmt_acl:
+  - 10.100.101.0 0.0.0.255
+  - 10.100.102.0 0.0.0.255
+  - 10.100.103.0 0.0.0.255
+interfaces:
+  - id: GigabitEthernet1
+    ip_addr: 192.0.2.129 255.255.255.252
+    desc: WAN circuit ID 5873654
+  - id: GigabitEthernet2
+    ip_addr: 10.25.10.1 255.255.255.0
+    desc: LAN interface 

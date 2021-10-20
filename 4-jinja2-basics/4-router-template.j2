@@ -1,0 +1,24 @@
+hostname {{ hostname }}
+
+no ip domain lookup
+ip domain name {{ domain_name }}
+ip ssh version 2
+ip name-server {{ name_server_pri }}
+ip name-server {{ name_server_sec }}
+
+ntp server {{ ntp_server_pri }} prefer
+ntp server {{ ntp_server_sec }}
+
+logging host {{ splunk_pri }}
+logging host {{ splunk_sec }}
+{% for acl1 in mgmt_acl %}
+access-list 10 permit {{ acl1 }}
+{%- endfor %}
+{% for acl2 in snmp_acl %}
+access-list 20 permit {{ acl2 }}
+{%- endfor %}
+{% for intf in interfaces %}
+interface {{ intf.id }}
+ ip address {{ intf.ip_addr }}
+ description {{ intf.desc }}
+{% endfor %}
