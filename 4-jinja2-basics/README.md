@@ -20,14 +20,14 @@ https://realpython.com/primer-on-jinja-templating/
 j2_template.render(stuff="Things")
 
 
-## 2. Router Base Config Template
+## 2. Switch Base Config Template
 
-Router config using template and data dictionary within Python script
+Switch config using template and data dictionary within Python script
 
 
-## 2. Router Base Config from file
+## 2. Switch Base Config from file
 
-Router config using j2 template file and YAML data file
+Switch config using j2 template file and YAML data file
 
 
 ## For-loops
