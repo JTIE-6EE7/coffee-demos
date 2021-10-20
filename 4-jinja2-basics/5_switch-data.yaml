@@ -1,0 +1,7 @@
+interfaces:
+  - id: GigabitEthernet1
+    ip_addr: 192.0.2.129 255.255.255.252
+    desc: WAN circuit ID 5873654
+  - id: GigabitEthernet2
+    ip_addr: 10.25.10.1 255.255.255.0
+    desc: LAN interface 

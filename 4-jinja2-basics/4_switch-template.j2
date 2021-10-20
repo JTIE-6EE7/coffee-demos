@@ -11,14 +11,6 @@ ntp server {{ ntp_server_sec }}
 
 logging host {{ splunk_pri }}
 logging host {{ splunk_sec }}
-{% for acl1 in mgmt_acl %}
-access-list 10 permit {{ acl1 }}
+{% for acl in mgmt_acl %}
+access-list 10 permit {{ acl }}
 {%- endfor %}
-{% for acl2 in snmp_acl %}
-access-list 20 permit {{ acl2 }}
-{%- endfor %}
-{% for intf in interfaces %}
-interface {{ intf.id }}
- ip address {{ intf.ip_addr }}
- description {{ intf.desc }}
-{% endfor %}
