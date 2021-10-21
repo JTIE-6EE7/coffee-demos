@@ -32,8 +32,8 @@ vlan {{ vlan.id }}
 {%- for vlan in vlans %}
 interface vlan{{ vlan.id }}
  description {{ site_code}}_{{ vlan.name }}
- no switchport {{ vlan.ip_addr }}
- ip address
+ no switchport 
+ ip address {{ vlan.ip_addr }}
  no shutdown
 {% endfor %}
 {% endif %}
